@@ -49,8 +49,6 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
       //check days
       $scope.user.listDays.forEach(function(day) {
         $scope.days[day-1].status = true;
-        $scope.days[day-2].status = true;
-        $scope.days[day-3].status = true;
       });
 
       //count streak
@@ -62,7 +60,7 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
       };
       checkStreak($scope.day-1);
 
-      
+
 
     });
 
