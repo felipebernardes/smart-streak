@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp" ng-controller="AppCtrl">
+<html ng-app="myApp" >
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,width=device-width">
@@ -26,10 +26,13 @@
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
-
+    
     <script src="app.js"></script>
+    <script src="//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.7"></script>
+    <script src="facebook.js"></script>
+
   </head>
-  <body >
+  <body ng-controller="AppCtrl">
     <header>
       <h1>Smart Streak</h1>
     </header>
@@ -54,8 +57,9 @@
       <ol class="timeline">
         <li ng-repeat="day in days" ng-class="{ checked: day.status }"></li>
       </ol>
-      <div class="fb-share-button" data-href="http://google.com" data-layout="button"></div>
     </section>
+    <div class="fb-share-button" data-href="http://www.smartfit.com.br/" data-layout="button"></div>
+
     <footer>
       <p>
         made by team bacon @ Tegra Lab
