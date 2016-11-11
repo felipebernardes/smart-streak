@@ -1,0 +1,20 @@
+.timeline {
+  width: 90vw;
+  height: 50vh;
+  min-height: 280px;
+  margin: auto;
+  background: #333;
+  padding: 5px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  list-style: none;
+}
+
+.timeline li {
+  width: 10px;
+  height: 10px;
+  margin: 3px;
+  border-radius: 1px;
+  background: #999;
+}
