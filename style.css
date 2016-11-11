@@ -43,18 +43,17 @@ h2 {
 dt {
   text-transform: uppercase;
   margin-left: 20px;
-  font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 10px
 }
 
 dd {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   margin-left: 20px;
 }
 
 span {
   font-family: 'Orbitron', sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   padding: 10px;
   /*margin-right: 5px;
   padding-top: 2px;*/
