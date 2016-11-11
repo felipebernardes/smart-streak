@@ -36,9 +36,38 @@ header {
   color: black;
 }
 
-.maromba {
+.form-wrapper {
   margin: 30px;
-  height: 385px;
+  height: 69vh;
+  display: flex;
+}
+
+.form-wrapper div {
+  margin: auto;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+  color: #111;
+  border-radius: 20px;
+  border: none;
+  padding: 5px;
+  height: 2.5rem;
+  text-align: center;
+}
+
+button {
+  color: #FFF422;
+  padding: .5rem 0;
+  text-transform: uppercase;
+  border: 2px solid #FFF422;
+  width: 100%;
+  background: none;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  margin-top: 10px;
 }
 
 h1 {
