@@ -49,7 +49,7 @@
         <dd><span>{{ streak }}</span> treinos</dd>
 
         <dt>treinos no ano</dt>
-        <dd><span>186</span> treinos</dd>
+        <dd><span>{{ daysInYear }}</span> treinos</dd>
       </dl>
       <ol class="timeline">
         <li ng-repeat="day in days" ng-class="{ checked: day.status }"></li>
