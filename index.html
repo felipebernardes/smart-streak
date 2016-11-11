@@ -25,12 +25,12 @@
       <h1>Smart Streak</h1>
     </header>
 
-    <section class="maromba">
+    <section class="maromba" ng-if="!infoUser">
       <input type="text" ng-model="userEmail"/>
       <button type="button" name="button" ng-click="addMessage()">Checkin</button>
     </section>
 
-    <section>
+    <section ng-if="infoUser">
       <h2>Natasha Matias</h2>
       <dl>
         <dt>treinos no mês</dt>
