@@ -12,6 +12,9 @@ firebase.initializeApp(config);
 
 app.controller('AppCtrl',['$scope', '$firebaseArray', function($scope, $firebaseArray) {
 
+  $scope.infoUser = false;
+  $scope.listDays = [];
+
   $scope.days = [];
   for (i = 0; i < 364; i++) {
     $scope.days.push({
@@ -31,6 +34,7 @@ app.controller('AppCtrl',['$scope', '$firebaseArray', function($scope, $firebase
   $scope.addMessage = function() {
     $scope.user = $firebaseArray(ref.child($scope.userEmail.toString()));
     $scope.user.$add($scope.day);
+    $scope.infoUser = true;
     console.log($scope.user);
   };
 
