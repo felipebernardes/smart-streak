@@ -10,7 +10,7 @@ var config = {
 
 firebase.initializeApp(config);
 
-app.controller('AppCtrl',['$scope', '$firebaseArray', function($scope, $firebaseArray) {
+app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebaseObject) {
 
   $scope.infoUser = false;
   $scope.listDays = [];
@@ -32,10 +32,17 @@ app.controller('AppCtrl',['$scope', '$firebaseArray', function($scope, $firebase
   var ref = firebase.database().ref().child("users");
 
   $scope.addMessage = function() {
-    $scope.user = $firebaseArray(ref.child($scope.userEmail.toString()));
-    $scope.user.$add($scope.day);
-    $scope.infoUser = true;
-    console.log($scope.user);
+    $scope.user = $firebaseObject(ref.child($scope.userEmail.toString()));
+    $scope.user.$loaded(function(user) {
+      if(!user.listDays) {
+        user.listDays = [];
+      }
+      user.listDays.push($scope.day);
+      user.$save();
+
+      $scope.infoUser = true;
+    });
+
   };
 
   console.log($scope.data);
