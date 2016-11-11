@@ -1,0 +1,23 @@
+{
+  "name": "beacon-poc",
+  "version": "1.0.0",
+  "description": "Made @ TegraLABs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipebernardes/beacon-poc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipebernardes/beacon-poc/issues"
+  },
+  "homepage": "https://github.com/felipebernardes/beacon-poc#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "eddystone-beacon": "^1.0.7"
+  }
+}
