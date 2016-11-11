@@ -22,7 +22,7 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
     });
   }
 
-  $scope.userEmail = 'Hello World';
+  $scope.userEmail = 'helloworld';
   var now = new Date();
   var start = new Date(now.getFullYear(), 0, 0);
   var diff = now - start;
