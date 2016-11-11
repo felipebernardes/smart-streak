@@ -23,8 +23,7 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
   }
 
   $scope.userName = 'felipebernardes';
-  $scope.streak = 1;
-
+  $scope.streak = 0;
 
   var now = new Date();
   var start = new Date(now.getFullYear(), 0, 0);
@@ -51,36 +50,15 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
         $scope.days[day-1].status = true;
       });
 
-      $scope.days.forEach(function(day) {
-        if (day.status === true) {
-          console.log(day);
-        }
-      });
-
       //count streak
-      var countStreak = function(d) {
-        console.log(d);
-
-        if (!$scope.days[d].status) {
-          return;
-        }
-
-        $scope.streak ++;
-        console.log(d, $scope.streak);
-
-        countStreak(d-1);
-      };
-
       var isPreviousChecked = function(day) {
-        return $scope.days[day].status;
+        return $scope.days[day-1].status;
       };
 
       var dayToCheck = $scope.day;
-
       while(isPreviousChecked(dayToCheck)) {
         $scope.streak++;
         dayToCheck--;
-        console.log('streak', dayToCheck);
       }
 
       // last days
@@ -92,9 +70,8 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
             count++;
           }
         });
-        console.log(count);
         return count;
-      }
+      };
       $scope.lastDaysShow = $scope.lastDays();
 
       $scope.daysInYear = 0;
