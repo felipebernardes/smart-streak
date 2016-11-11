@@ -42,9 +42,6 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
       }
       user.listDays.push($scope.day);
 
-      for (var i = 316; i < 322; i++) {
-        user.listDays.push(i);
-      }
       user.$save();
       console.log($scope.user.listDays);
 
