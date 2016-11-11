@@ -3,18 +3,17 @@
   height: 50vh;
   min-height: 280px;
   margin: auto;
-  background: #333;
+  border: 1.5px solid rgba(0,0,0,0.3);
+  border-radius: 2px;
   padding: 5px;
   display: flex;
   flex-flow: column wrap;
-  align-items: center;
   list-style: none;
 }
 
 .timeline li {
   width: 10px;
   height: 10px;
-  margin: 3px;
-  border-radius: 1px;
+  margin: 1px;
   background: #999;
 }
