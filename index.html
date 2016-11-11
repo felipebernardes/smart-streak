@@ -3,22 +3,44 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,width=device-width">
-    <meta charset="utf-8">
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name="theme-color" content="#f4cccc">
 
     <title>Smart Streak</title>
 
     <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900'>
-    <link rel="stylesheet" href="bower_components/normalize.css">
+    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="timeline.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="style.css">
 
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="app.js"></script>
   </head>
   <body ng-controller="AppCtrl">
+    <header>
+      <h1>Smart Streak</h1>
+    </header>
+    <section>
+      <h2>Natasha Matias</h2>
+      <dl>
+        <dt>treinos no mês</dt>
+        <dd><span>16</span> treinos</dd>
 
-    <h1>Smart Streak</h1>
+        <dt>treinos consecutivos</dt>
+        <dd><span>12</span> treinos</dd>
 
+        <dt>treinos no ano</dt>
+        <dd><span>186</span> treinos</dd>
+      </dl>
+      <ol class="timeline">
+        <li ng-repeat="day in days" ng-class="{ checked: day.status }"></li>
+      </ol>
+    </section>
+    <footer>
+      <p>
+        feito @ Tegra Lab - © team bacon
+      </p>
+    </footer>
   </body>
 </html>
