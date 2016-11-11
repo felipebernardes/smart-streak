@@ -28,7 +28,8 @@
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
 
     <script src="app.js"></script>
-    <script src="//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.7"></script>
+    <script
+    src="//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.7"></script>
     <script src="facebook.js"></script>
 
   </head>
@@ -57,7 +58,7 @@
 
       <h3>Dias no ano</h3>
       <ol class="timeline">
-        <li ng-repeat="day in days" ng-class="{ checked: day.status }"></li>
+        <li ng-repeat="day in days" ng-class="{ checked: day.status, today: $index == day }"></li>
       </ol>
       <div class="fb-share-button" data-href="http://www.smartfit.com.br/" data-layout="button"></div>
     </section>
