@@ -18,11 +18,14 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
   $scope.days = [];
   for (i = 0; i < 364; i++) {
     $scope.days.push({
-          status: true
+          status: false
     });
   }
 
-  $scope.userEmail = 'helloworld';
+  $scope.userEmail = 'felipebernardes';
+  $scope.streak = 1;
+
+
   var now = new Date();
   var start = new Date(now.getFullYear(), 0, 0);
   var diff = now - start;
@@ -39,12 +42,31 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
       }
       user.listDays.push($scope.day);
       user.$save();
+        console.log($scope.user.listDays);
 
       $scope.infoUser = true;
+
+      //check days
+      $scope.user.listDays.forEach(function(day) {
+        $scope.days[day-1].status = true;
+        $scope.days[day-2].status = true;
+        $scope.days[day-3].status = true;
+      });
+
+      //count streak
+      var checkStreak = function(day) {
+        if ($scope.days[day-1].status == true) {
+          $scope.streak ++;
+          checkStreak(day-1);
+        }
+      };
+      checkStreak($scope.day-1);
+
+      
+
     });
 
   };
 
-  console.log($scope.data);
 
 }]);
