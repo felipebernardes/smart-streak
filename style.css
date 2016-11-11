@@ -23,16 +23,17 @@ li {
 }
 
 body {
-  background-color: #FFF422;
+  background-color: black;
+  color: #FFF422;
 }
 
 header {
   font-family: 'Orbitron', sans-serif;
   text-align: center;
   text-transform: uppercase;
-  background-color: black;
+  background-color: #FFF422;
   padding: 30px 0;
-  color: yellow;
+  color: black;
 }
 
 h1 {
