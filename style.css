@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:500|Orbitron:900');
+
+body {
+  min-height: 100vh;
+  font-family: 'Dosis', sans-serif;
+}
+
 *,
 *:after,
 *:before {
@@ -20,6 +27,7 @@ body {
 }
 
 header {
+  font-family: 'Orbitron', sans-serif;
   text-align: center;
   text-transform: uppercase;
   background-color: black;
