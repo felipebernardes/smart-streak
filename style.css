@@ -36,6 +36,10 @@ header {
   color: black;
 }
 
+.maromba {
+  margin: 30px;
+}
+
 h1 {
   font-size: 1.4rem;
   letter-spacing: 2px;

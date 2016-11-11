@@ -15,12 +15,24 @@
     <link rel="stylesheet" href="style.css">
 
     <script src="node_modules/angular/angular.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+
+    <script src="appSouMaromba.js"> </script>
     <script src="app.js"></script>
   </head>
   <body ng-controller="AppCtrl">
     <header>
       <h1>Smart Streak</h1>
     </header>
+
+    <section class="maromba">
+      <input type="text" ng-model="userEmail"/>
+
+      <button type="button" name="button" ng-click="addMessage()">Checkin</button>
+
+    </section>
+
     <section>
       <h2>Natasha Matias</h2>
       <dl>
@@ -37,6 +49,7 @@
         <li ng-repeat="day in days" ng-class="{ checked: day.status }"></li>
       </ol>
     </section>
+
     <footer>
       <p>
         feito @ Tegra Lab - © team bacon
