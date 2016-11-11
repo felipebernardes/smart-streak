@@ -22,7 +22,7 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
     });
   }
 
-  $scope.userEmail = 'felipebernardes';
+  $scope.userName = 'felipebernardes';
   $scope.streak = 1;
 
 
@@ -35,7 +35,7 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
   var ref = firebase.database().ref().child("users");
 
   $scope.addMessage = function() {
-    $scope.user = $firebaseObject(ref.child($scope.userEmail.toString()));
+    $scope.user = $firebaseObject(ref.child($scope.userName.toString()));
     $scope.user.$loaded(function(user) {
       if(!user.listDays) {
         user.listDays = [];
@@ -49,8 +49,6 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
       //check days
       $scope.user.listDays.forEach(function(day) {
         $scope.days[day-1].status = true;
-        $scope.days[day-2].status = true;
-        $scope.days[day-3].status = true;
       });
 
       //count streak
@@ -62,7 +60,7 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
       };
       checkStreak($scope.day-1);
 
-      
+
 
     });
 
