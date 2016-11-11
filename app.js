@@ -43,7 +43,6 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
       user.listDays.push($scope.day);
 
       user.$save();
-      console.log($scope.user.listDays);
 
       $scope.infoUser = true;
 
@@ -52,15 +51,37 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
         $scope.days[day-1].status = true;
       });
 
-      //count streak
-      var countStreak = function(day) {
-        if ($scope.days[day-1].status == true) {
-          $scope.streak ++;
-          checkStreak(day-1);
+      $scope.days.forEach(function(day) {
+        if (day.status === true) {
+          console.log(day);
         }
+      });
+
+      //count streak
+      var countStreak = function(d) {
+        console.log(d);
+
+        if (!$scope.days[d].status) {
+          return;
+        }
+
+        $scope.streak ++;
+        console.log(d, $scope.streak);
+
+        countStreak(d-1);
       };
 
-      countStreak($scope.day-1);
+      var isPreviousChecked = function(day) {
+        return $scope.days[day].status;
+      };
+
+      var dayToCheck = $scope.day;
+
+      while(isPreviousChecked(dayToCheck)) {
+        $scope.streak++;
+        dayToCheck--;
+        console.log('streak', dayToCheck);
+      }
 
       // last days
       $scope.lastDays = function() {
@@ -79,7 +100,7 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
       $scope.daysInYear = 0;
       //count days
       $scope.days.forEach(function(day) {
-        if (day.status == true) {
+        if (day.status === true) {
           $scope.daysInYear++;
         }
       });
