@@ -52,15 +52,22 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
       });
 
       //count streak
-      var checkStreak = function(day) {
+      var countStreak = function(day) {
         if ($scope.days[day-1].status == true) {
           $scope.streak ++;
           checkStreak(day-1);
         }
       };
-      checkStreak($scope.day-1);
 
+      countStreak($scope.day-1);
 
+      $scope.daysInYear = 0;
+      //count days
+      $scope.days.forEach(function(day) {
+        if (day.status == true) {
+          $scope.daysInYear++;
+        }
+      });
 
     });
 
