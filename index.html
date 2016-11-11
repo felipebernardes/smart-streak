@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="myApp" ng-controller="AppCtrl">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,width=device-width">
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name="theme-color" content="#f4cccc">
+    <meta property="og:title" metaproperty="ogTitle" content="">
+    <meta property="og:image" metaproperty="ogImage" content="">
+    <meta property="og:url" metaproperty="ogUrl" content="">
+    <meta property="og:description" metaproperty="ogDescription" content="">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
 
     <title>Smart Streak</title>
 
@@ -17,9 +26,11 @@
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+    <script src="//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.7"></script>
+    <script src="facebook.js"></script>
     <script src="app.js"></script>
   </head>
-  <body ng-controller="AppCtrl">
+  <body >
     <header>
       <h1>Smart Streak</h1>
     </header>
@@ -29,7 +40,7 @@
         <button type="button" name="button" ng-click="addMessage()">Checkin</button>
       </div>
     </section>
-    <section ng-if="infoUser">
+    <section >
       <h2>Natasha Matias</h2>
       <dl>
         <dt>treinos no mês</dt>
@@ -44,6 +55,7 @@
       <ol class="timeline">
         <li ng-repeat="day in days" ng-class="{ checked: day.status }"></li>
       </ol>
+      <div class="fb-share-button" data-href="http://google.com" data-layout="button"></div>
     </section>
     <footer>
       <p>
