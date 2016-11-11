@@ -41,8 +41,12 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
         user.listDays = [];
       }
       user.listDays.push($scope.day);
+
+      for (var i = 316; i < 322; i++) {
+        user.listDays.push(i);
+      }
       user.$save();
-        console.log($scope.user.listDays);
+      console.log($scope.user.listDays);
 
       $scope.infoUser = true;
 
@@ -61,6 +65,20 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
 
       countStreak($scope.day-1);
 
+      // last days
+      $scope.lastDays = function() {
+        var count = 0;
+        var setDays = new Set(user.listDays);
+        setDays.forEach(function(day) {
+          if(day <= $scope.day && day >= ($scope.day - 30)) {
+            count++;
+          }
+        });
+        console.log(count);
+        return count;
+      }
+      $scope.lastDaysShow = $scope.lastDays();
+
       $scope.daysInYear = 0;
       //count days
       $scope.days.forEach(function(day) {
@@ -70,8 +88,5 @@ app.controller('AppCtrl',['$scope', '$firebaseObject', function($scope, $firebas
       });
 
     });
-
   };
-
-
 }]);
