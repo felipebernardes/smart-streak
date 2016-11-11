@@ -26,7 +26,7 @@
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
-    
+
     <script src="app.js"></script>
     <script src="//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.7"></script>
     <script src="facebook.js"></script>
@@ -36,13 +36,13 @@
     <header>
       <h1>Smart Streak</h1>
     </header>
-    <section class="form-wrapper" ng-if="!infoUser">
+    <section class="form-wrapper" ng-show="!infoUser">
       <div>
         <input type="email" ng-model="userName" placeholder="Digite seu nome de usuário"/>
         <button type="button" name="button" ng-click="addMessage()">Checkin</button>
       </div>
     </section>
-    <section ng-if="infoUser">
+    <section ng-show="infoUser">
       <h2>{{ userName }}</h2>
       <dl>
         <dt>treinos no mês</dt>
@@ -57,8 +57,8 @@
       <ol class="timeline">
         <li ng-repeat="day in days" ng-class="{ checked: day.status }"></li>
       </ol>
+      <div class="fb-share-button" data-href="http://www.smartfit.com.br/" data-layout="button"></div>
     </section>
-    <div class="fb-share-button" data-href="http://www.smartfit.com.br/" data-layout="button"></div>
 
     <footer>
       <p>
